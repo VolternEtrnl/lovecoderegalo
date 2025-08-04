@@ -1,34 +1,40 @@
-<div class="heart-container">I <span class="heart">♥</span> You</div>
+<div class="heart-message">
+  <span class="text">I</span>
+  <span class="heart">♥</span>
+  <span class="text">You</span>
+</div>
 
 <style>
-.heart-container {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   color: white;
-   font-size: 24px;
-   text-align: center;
-   pointer-events: none;
-   text-shadow: 0 0 5px rgba(255,255,255,0.5);
-   display: flex;
-   align-items: center;
-   gap: 10px;
+.heart-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.text {
+  color: white;
+  font-size: 24px;
+  text-shadow: 0 0 5px rgba(255,255,255,0.5);
 }
 
 .heart {
-   font-size: 72px; /* Увеличение в 3 раза (24px × 3) */
-   color: rgba(255, 0, 0, 0.8);
-   text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-   animation: heartbeat 1.5s infinite;
-   line-height: 1;
+  font-size: 72px; /* 24px × 3 = 72px */
+  color: rgba(255, 0, 0, 0.8);
+  text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+  animation: heartbeat 1.5s infinite;
+  line-height: 1;
 }
 
 @keyframes heartbeat {
-   0% { transform: scale(1); }
-   25% { transform: scale(1.1); }
-   50% { transform: scale(1); }
-   75% { transform: scale(1.1); }
-   100% { transform: scale(1); }
+  0% { transform: scale(1); }
+  25% { transform: scale(1.1); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 </style>
