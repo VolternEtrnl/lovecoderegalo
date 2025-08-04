@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Пульсирующее сердце</title>
+  <meta charset="UTF-8">
+  <title>Сердечко</title>
   <style>
     body {
       background: #111;
@@ -14,23 +14,12 @@
     }
 
     .heart {
+      position: relative;
       width: 100px;
       height: 90px;
-      position: relative;
-      transform: scale(1);
-      animation: pulse 1s infinite;
+      transform: rotate(-45deg);
       background: red;
-      transform-origin: center bottom;
-      clip-path: polygon(
-        50% 0%, 
-        90% 30%, 
-        100% 60%, 
-        75% 90%, 
-        50% 100%, 
-        25% 90%, 
-        0% 60%, 
-        10% 30%
-      );
+      animation: pulse 1s infinite;
     }
 
     .heart::before,
@@ -55,10 +44,10 @@
 
     @keyframes pulse {
       0%, 100% {
-        transform: scale(1);
+        transform: scale(1) rotate(-45deg);
       }
       50% {
-        transform: scale(1.2);
+        transform: scale(1.2) rotate(-45deg);
       }
     }
   </style>
