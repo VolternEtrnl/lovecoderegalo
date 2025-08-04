@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Сердечко</title>
+  <title>I ❤️ You</title>
   <style>
     body {
       background: #111;
@@ -11,34 +11,79 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      font-family: Arial, sans-serif;
     }
 
-    .heart {
+    .outline-heart {
       position: relative;
-      width: 100px;
-      height: 90px;
+      width: 400px;
+      height: 360px;
       transform: rotate(-45deg);
-      background: red;
-      animation: pulse 1s infinite;
+      border: 8px solid red;
+      border-radius: 50% 50% 0 0;
+      margin-bottom: 50px;
     }
 
-    .heart::before,
-    .heart::after {
+    .outline-heart::before,
+    .outline-heart::after {
+      content: '';
+      position: absolute;
+      width: 400px;
+      height: 360px;
+      border: 8px solid red;
+      border-radius: 50% 50% 0 0;
+    }
+
+    .outline-heart::before {
+      top: -180px;
+      left: 0;
+      transform: rotate(45deg);
+    }
+
+    .outline-heart::after {
+      top: 0;
+      left: 180px;
+      transform: rotate(45deg);
+    }
+
+    .content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      text-align: center;
+      color: white;
+      font-size: 32px;
+    }
+
+    .animated-heart {
+      display: inline-block;
+      position: relative;
+      width: 30px;
+      height: 27px;
+      background: red;
+      transform: rotate(-45deg);
+      animation: pulse 1s infinite;
+      margin: 0 10px;
+    }
+
+    .animated-heart::before,
+    .animated-heart::after {
       content: "";
       position: absolute;
-      width: 100px;
-      height: 90px;
+      width: 30px;
+      height: 27px;
       background: red;
       border-radius: 50%;
     }
 
-    .heart::before {
-      top: -50px;
+    .animated-heart::before {
+      top: -15px;
       left: 0;
     }
 
-    .heart::after {
-      left: 50px;
+    .animated-heart::after {
+      left: 15px;
       top: 0;
     }
 
@@ -47,12 +92,16 @@
         transform: scale(1) rotate(-45deg);
       }
       50% {
-        transform: scale(1.2) rotate(-45deg);
+        transform: scale(1.3) rotate(-45deg);
       }
     }
   </style>
 </head>
 <body>
-  <div class="heart"></div>
+  <div class="outline-heart">
+    <div class="content">
+      I <span class="animated-heart"></span> you
+    </div>
+  </div>
 </body>
 </html>
